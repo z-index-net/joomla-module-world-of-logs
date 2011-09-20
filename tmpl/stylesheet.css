@@ -1,0 +1,18 @@
+/* $Id$ */
+
+table.mod_world_of_logs {
+    width: 100%;
+    border: 0;
+    border-collapse: separate;
+}
+
+table.mod_world_of_logs td {
+    border: 0;
+    padding: 3px;
+}
+
+table.mod_world_of_logs td.bossCount,
+table.mod_world_of_logs td.killCount,
+table.mod_world_of_logs td.wipeCount {
+    text-align: center;
+}

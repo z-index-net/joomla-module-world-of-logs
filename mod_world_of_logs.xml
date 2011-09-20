@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @Version $Id: mod_world_of_logs.xml 1 2011-09-19 18:45:05Z bRunO $ -->
+<install type="module" version="1.5.0" client="site" method="upgrade">
+    <name>World of Logs latest Raids</name>
+    <author>Branko Wilhelm</author>
+    <creationDate>Sep 2011</creationDate>
+    <copyright>(C) 2011 Branko Wilhelm</copyright>
+    <license>http://www.gnu.org/licenses/gpl.html GNU/GPL version 3</license>
+    <authorEmail>bw@z-index.net</authorEmail>
+    <authorUrl>www.z-index.net</authorUrl>
+    <version>1.0</version>
+    <description>Display latest Raids from World of Logs.</description>
+    <files>
+        <filename module="mod_world_of_logs">mod_world_of_logs.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_world_of_logs.php</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="lang">
+        <language tag="en-GB">en-GB.mod_world_of_logs.ini</language>
+        <language tag="de-DE">de-DE.mod_world_of_logs.ini</language>
+    </languages>
+    <!-- Joomla! 1.6+ -->
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="guild" type="text" filter="integer" default="" size="30" required="true" label="MOD_WOL_GUILD_LABEL" description="MOD_WOL_GUILD_DESC" />
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+                <field name="timeout" type="text" filter="integer" default="10" size="5" required="true" label="MOD_WOL_TIMEOUT_LABEL" description="MOD_WOL_TIMEOUT_DESC" />
+                <field name="wolcache" required="true" type="list" default="file" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC">
+                    <option value="file">File</option>
+                    <option value="memcache">Memcache</option>
+                    <option value="xcache">XCache</option>
+                    <option value="apc">APC</option>
+                </field>
+                <field required="true" name="wolcachetime" type="text" filter="integer" default="60" label="MOD_WOL_CACHETIME_LABEL" description="MOD_WOL_CACHETIME_DESC"/>
+            </fieldset>
+        </fields>
+    </config>
+    <!-- Joomla! 1.5 -->
+    <params name="basic">
+        <param name="guild" type="text" default="" size="30" label="MOD_WOL_GUILD_LABEL" description="MOD_WOL_GUILD_DESC" />
+    </params>
+    <params name="advanced">
+        <param name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+        <param name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+        <param name="cache_time" type="text" default="15" size="5" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC" />
+        <param name="timeout" type="text" default="10" size="5" label="MOD_WOL_TIMEOUT_LABEL" description="MOD_WOL_TIMEOUT_DESC" />
+        <param name="wolcache" type="list" default="file" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC">
+            <option value="file">File</option>
+            <option value="memcache">Memcache</option>
+            <option value="xcache">XCache</option>
+            <option value="apc">APC</option>
+        </param>
+        <param name="wolcachetime" type="text"  default="60" label="MOD_WOL_CACHETIME_LABEL" description="MOD_WOL_CACHETIME_DESC"/>
+    </params>
+</install>
