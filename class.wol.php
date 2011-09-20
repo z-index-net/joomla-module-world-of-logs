@@ -8,7 +8,7 @@
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 2 2011-09-20 22:32:09Z bRunO $
  */
 class WOL {
 
@@ -248,7 +248,7 @@ class WOL {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 2 2011-09-20 22:32:09Z bRunO $
  */
 final class WoLStorageFile {
 
@@ -321,7 +321,7 @@ final class WoLStorageFile {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 2 2011-09-20 22:32:09Z bRunO $
  */
 final class WoLStorageMemcache {
 
@@ -397,7 +397,7 @@ final class WoLStorageMemcache {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 2 2011-09-20 22:32:09Z bRunO $
  */
 final class WoLStorageAPC {
 
@@ -441,7 +441,7 @@ final class WoLStorageAPC {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 2 2011-09-20 22:32:09Z bRunO $
  */
 final class WoLStorageXCache {
 
