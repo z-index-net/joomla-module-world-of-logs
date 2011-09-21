@@ -43,12 +43,11 @@
         </fields>
     </config>
     <!-- Joomla! 1.5 -->
-    <params name="basic">
+    <params>
         <param name="guild" type="text" default="" size="30" label="MOD_WOL_GUILD_LABEL" description="MOD_WOL_GUILD_DESC" />
     </params>
-    <params name="advanced">
-        <param name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
-        <param name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+    <params group="advanced">
+        <param name="moduleclass_sfx" type="text" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
         <param name="cache_time" type="text" default="15" size="5" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC" />
         <param name="timeout" type="text" default="10" size="5" label="MOD_WOL_TIMEOUT_LABEL" description="MOD_WOL_TIMEOUT_DESC" />
         <param name="wolcache" type="list" default="file" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC">
