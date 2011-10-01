@@ -8,7 +8,7 @@
     <license>http://www.gnu.org/licenses/gpl.html GNU/GPL version 3</license>
     <authorEmail>bw@z-index.net</authorEmail>
     <authorUrl>www.z-index.net</authorUrl>
-    <version>1.0</version>
+	<version>@SVN_REVISION@</version>
     <description>Display latest Raids from World of Logs.</description>
     <files>
         <filename module="mod_world_of_logs">mod_world_of_logs.php</filename>
