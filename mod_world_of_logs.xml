@@ -59,6 +59,6 @@
         <param name="wolcachetime" type="text"  default="60" label="MOD_WOL_CACHETIME_LABEL" description="MOD_WOL_CACHETIME_DESC"/>
     </params>
 	<updateservers>
-		<server type="extension" priority="1" name="World of Logs latest Raids">http://www.z-index.net/joomla/world-of-logs-latest-raids/download/extension.xml</server>
+		<server type="extension" priority="1" name="World of Logs latest Raids">http://www.z-index.net/joomla/world-of-logs-latest-raids/updatestream/?view=xml</server>
 	</updateservers>
 </install>
