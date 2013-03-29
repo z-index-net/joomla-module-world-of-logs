@@ -5,7 +5,7 @@
  *
  * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  2010 - 2011 Branko Wilhelm
+ * @copyright  2010 - 2013 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
  * @version    $Id$

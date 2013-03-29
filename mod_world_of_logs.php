@@ -5,7 +5,7 @@
  *
  * @author     Branko Wilhelm <bw@z-index.net>
  * @link       http://www.z-index.net
- * @copyright  (c) 2011 Branko Wilhelm
+ * @copyright  (c) 2011 - 2013 Branko Wilhelm
  * @package    mod_world_of_logs
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @version    $Id$
@@ -18,4 +18,4 @@ require_once dirname(__FILE__) . '/helper.php';
 
 $wol = mod_world_of_logs::onload($params);
 
-require JModuleHelper::getLayoutPath('mod_world_of_logs', $params->get('layout', 'default'));
+require JModuleHelper::getLayoutPath($module->module, $params->get('layout', 'default'));
