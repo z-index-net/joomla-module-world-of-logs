@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- @Version $Id$ -->
-<install type="module" version="1.5.0" client="site" method="upgrade">
+<extension type="module" version="2.5.0" client="site" method="upgrade">
     <name>World of Logs latest Raids</name>
     <author>Branko Wilhelm</author>
     <creationDate>Sep 2011</creationDate>
-    <copyright>(C) 2011 Branko Wilhelm</copyright>
+    <copyright>(C) 2011 - 2013 Branko Wilhelm</copyright>
     <license>http://www.gnu.org/licenses/gpl.html GNU/GPL version 3</license>
     <authorEmail>bw@z-index.net</authorEmail>
     <authorUrl>www.z-index.net</authorUrl>
@@ -21,7 +21,6 @@
         <language tag="en-GB">en-GB.mod_world_of_logs.ini</language>
         <language tag="de-DE">de-DE.mod_world_of_logs.ini</language>
     </languages>
-    <!-- Joomla! 1.6+ -->
     <config>
         <fields name="params">
             <fieldset name="basic">
@@ -41,23 +40,7 @@
             </fieldset>
         </fields>
     </config>
-    <!-- Joomla! 1.5 -->
-    <params>
-        <param name="guild" type="text" default="" size="30" label="MOD_WOL_GUILD_LABEL" description="MOD_WOL_GUILD_DESC" />
-    </params>
-    <params group="advanced">
-        <param name="moduleclass_sfx" type="text" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
-        <param name="cache_time" type="text" default="15" size="5" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC" />
-        <param name="timeout" type="text" default="10" size="5" label="MOD_WOL_TIMEOUT_LABEL" description="MOD_WOL_TIMEOUT_DESC" />
-        <param name="wolcache" type="list" default="file" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC">
-            <option value="file">File</option>
-            <option value="memcache">Memcache</option>
-            <option value="xcache">XCache</option>
-            <option value="apc">APC</option>
-        </param>
-        <param name="wolcachetime" type="text"  default="60" label="MOD_WOL_CACHETIME_LABEL" description="MOD_WOL_CACHETIME_DESC"/>
-    </params>
 	<updateservers>
 		<server type="extension" priority="1" name="World of Logs latest Raids">http://www.z-index.net/en/joomla/world-of-logs-latest-raids/updatestream.xml</server>
 	</updateservers>
-</install>
+</extension>
