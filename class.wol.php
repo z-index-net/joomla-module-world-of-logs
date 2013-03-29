@@ -3,12 +3,12 @@
 /**
  * World of Logs Parser - PHP-Curl and PHP 5.2 or higher is required!
  *
- * @author     Branko Wilhelm <bw@z-index.net>
+ * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id: class.wol.php 12 2012-03-12 20:18:47Z bRunO $
+ * @version    $Id$
  */
 class WOL {
 
@@ -55,7 +55,7 @@ class WOL {
     /**
      * @var array Zone IDs and Acronyms
      */
-    public $zones = array(4812 => 'ICC', 4987 => 'RS', 4493 => 'OS', 4273 => 'Ulduar', 4722 => 'PDK', 3456 => 'Nax', 2159 => 'Ony', 4603 => 'VA', 4500 => 'Malygos', 5600 => 'BH', 5334 => 'BoT', 5094 => 'BWD', 5638 => 'T4W', 5723 => 'FL', 5892 => 'DS');
+    public $zones = array(4812 => 'ICC', 4987 => 'RS', 4493 => 'OS', 4273 => 'Ulduar', 4722 => 'PDK', 3456 => 'Nax', 2159 => 'Ony', 4603 => 'VA', 4500 => 'Malygos', 5600 => 'BH', 5334 => 'BoT', 5094 => 'BWD', 5638 => 'T4W', 5723 => 'FL', 5892 => 'DS', 6125 => 'Mogu', 6297 => 'HoF', 6067 => 'ToES', 6622 => 'ToT');
 
     public function __construct($guild) {
 
@@ -252,7 +252,7 @@ class WOL {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id: class.wol.php 12 2012-03-12 20:18:47Z bRunO $
+ * @version    $Id$
  */
 final class WoLStorageFile {
 
@@ -325,7 +325,7 @@ final class WoLStorageFile {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id: class.wol.php 12 2012-03-12 20:18:47Z bRunO $
+ * @version    $Id$
  */
 final class WoLStorageMemcache {
 
@@ -401,7 +401,7 @@ final class WoLStorageMemcache {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id: class.wol.php 12 2012-03-12 20:18:47Z bRunO $
+ * @version    $Id$
  */
 final class WoLStorageAPC {
 
@@ -445,7 +445,7 @@ final class WoLStorageAPC {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id: class.wol.php 12 2012-03-12 20:18:47Z bRunO $
+ * @version    $Id$
  */
 final class WoLStorageXCache {
 
