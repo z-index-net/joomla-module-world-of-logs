@@ -6,11 +6,13 @@
  * @link       http://www.z-index.net
  * @copyright  (c) 2011 - 2013 Branko Wilhelm
  * @package    mod_world_of_logs
- * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
+ * @license    GNU General Public License v3
  * @version    $Id$
  */
+
 // no direct accesss
 defined('_JEXEC') or die;
+
 $base = JURI::base(true);
 JFactory::getDocument()->addStyleSheet($base . '/modules/mod_world_of_logs/tmpl/stylesheet.css', 'text/css', 'all');
 ?>

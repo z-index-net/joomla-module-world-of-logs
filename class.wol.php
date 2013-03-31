@@ -5,10 +5,10 @@
  *
  * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  2010 - 2013 Branko Wilhelm
+ * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 17 2013-03-07 14:11:05Z branko.wilhelm@gmail.com $
  */
 class WOL {
 
@@ -252,7 +252,7 @@ class WOL {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 17 2013-03-07 14:11:05Z branko.wilhelm@gmail.com $
  */
 final class WoLStorageFile {
 
@@ -325,7 +325,7 @@ final class WoLStorageFile {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 17 2013-03-07 14:11:05Z branko.wilhelm@gmail.com $
  */
 final class WoLStorageMemcache {
 
@@ -401,7 +401,7 @@ final class WoLStorageMemcache {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 17 2013-03-07 14:11:05Z branko.wilhelm@gmail.com $
  */
 final class WoLStorageAPC {
 
@@ -445,7 +445,7 @@ final class WoLStorageAPC {
  * @copyright  2010 - 2011 Branko Wilhelm
  * @license    GNU Public License <http://www.gnu.org/licenses/gpl.html>
  * @package    wol_parser
- * @version    $Id$
+ * @version    $Id: class.wol.php 17 2013-03-07 14:11:05Z branko.wilhelm@gmail.com $
  */
 final class WoLStorageXCache {
 
