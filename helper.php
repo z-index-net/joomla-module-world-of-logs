@@ -42,7 +42,7 @@ abstract class mod_world_of_logs {
     	$cache->setCaching(JFactory::getConfig()->get('caching'));
     	
        if($result->code != 200) {
-            return '<strong>' . __CLASS__ . ' error</strong><br/>HTTP Code: ' . $result->code;
+            return 'error in <strong>' . __CLASS__ . '</strong><br/>HTTP Code: ' . $result->code;
         }
         
         $result->body = json_decode($result->body);
