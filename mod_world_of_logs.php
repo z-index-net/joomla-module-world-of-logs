@@ -17,6 +17,11 @@ defined('_JEXEC') or die;
 // Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
 
-$wol = mod_world_of_logs::onload($params);
+$logs = mod_world_of_logs::_($params);
+
+if(!is_array($logs)) {
+	echo $logs;
+	return;
+}
 
 require JModuleHelper::getLayoutPath($module->module, $params->get('layout', 'default'));

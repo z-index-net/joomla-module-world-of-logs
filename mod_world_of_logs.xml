@@ -14,7 +14,6 @@
         <filename module="mod_world_of_logs">mod_world_of_logs.php</filename>
         <filename>helper.php</filename>
         <filename>index.html</filename>
-        <filename>class.wol.php</filename>
         <folder>tmpl</folder>
     </files>
     <languages folder="lang">
@@ -25,18 +24,13 @@
         <fields name="params">
             <fieldset name="basic">
                 <field name="guild" type="text" filter="integer" default="" size="30" required="true" label="MOD_WOL_GUILD_LABEL" description="MOD_WOL_GUILD_DESC" />
+                <field name="raids" type="integer" first="1" last="10" step="1" default="10" label="MOD_WOL_GUILD_RAIDS_LABEL" description="MOD_WOL_GUILD_RAIDS_DESC" />
             </fieldset>
             <fieldset name="advanced">
                 <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
                 <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
                 <field name="timeout" type="text" filter="integer" default="10" size="5" required="true" label="MOD_WOL_TIMEOUT_LABEL" description="MOD_WOL_TIMEOUT_DESC" />
-                <field name="wolcache" required="true" type="list" default="file" label="MOD_WOL_CACHE_LABEL" description="MOD_WOL_CACHE_DESC">
-                    <option value="file">File</option>
-                    <option value="memcache">Memcache</option>
-                    <option value="xcache">XCache</option>
-                    <option value="apc">APC</option>
-                </field>
-                <field required="true" name="wolcachetime" type="text" filter="integer" default="60" label="MOD_WOL_CACHETIME_LABEL" description="MOD_WOL_CACHETIME_DESC"/>
+                <field name="cache_time" type="text" filter="integer" default="60" required="true" label="MOD_WOL_CACHETIME_LABEL" description="MOD_WOL_CACHETIME_DESC"/>
             </fieldset>
         </fields>
     </config>

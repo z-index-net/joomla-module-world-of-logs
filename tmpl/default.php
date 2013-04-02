@@ -19,14 +19,23 @@ JFactory::getDocument()->addStyleSheet($base . '/modules/mod_world_of_logs/tmpl/
 <table class="mod_world_of_logs<?php echo $params->get('moduleclass_sfx'); ?>">
     <thead>
         <tr>
-            <th><b>Raid</b></th>
-            <th><b>Dur.</b></th>
+            <th><strong><?php echo JText::_('MOD_WOL_RAID'); ?></strong></th>
+            <th><strong><?php echo JText::_('MOD_WOL_DURATION'); ?></strong></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/boss.png" width="16" height="16" alt="" title="bossCount" /></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/kills.png" width="16" height="16" alt="" title="killCount" /></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/wipes.png" width="16" height="16" alt="" title="wipeCount" /></th>
         </tr>
     </thead>
+    <tbody>
     <?php
-    echo $wol->tbody(); // output only the tbody
-    ?>
+    foreach($logs as $log): ?>
+    <tr>
+    	<td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHTML::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?> <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
+    	<td class="duration"><?php echo $log->duration; ?></td>
+    	<td class="bossCount"><?php echo $log->bossCount; ?></td>
+    	<td class="killCount"><?php echo $log->killCount; ?></td>
+    	<td class="wipeCount"><?php echo $log->wipeCount; ?></td>
+    </tr>
+	<?php endforeach; ?>
+    </tbody>
 </table>
