@@ -11,10 +11,9 @@
  * @version    $Id$
  */
 
-// no direct access
 defined('_JEXEC') or die;
 
-jimport('joomla.client.http');
+jimport('joomla.http.http');
 
 abstract class mod_world_of_logs {
 
@@ -23,7 +22,7 @@ abstract class mod_world_of_logs {
     public static function _(JRegistry &$params) {
 
     	if (!$params->get('guild')) {
-    		return array('please configure Module' . ' - ' . __CLASS__);
+    		return 'please configure Module - ' . __CLASS__;
     	}
     	
     	$url = 'http://www.worldoflogs.com/feeds/guilds/' . $params->get('guild') . '/raids/';
@@ -31,18 +30,21 @@ abstract class mod_world_of_logs {
     	$cache = JFactory::getCache(__CLASS__ , 'output');
     	$cache->setCaching(1);
     	$cache->setLifeTime($params->get('cache_time', 60) * 60);
-    	
     	if(!$result = $cache->get($params->get('guild'))) {
-    		$http = new JHttp();
+    		$http = new JHttp;
     		$http->setOption('userAgent', 'Joomla! ' . JVERSION . '; World of Logs latest Raids; php/' . phpversion());
-    		$result = $http->get($url, null, $params->get('timeout', 10));
+    		
+    		try {
+	    		$result = $http->get($url, null, $params->get('timeout', 10));
+    		}catch(Exception $e) {
+    			return $e->getMessage();
+    		}
+    		
     		$cache->store($result, $params->get('guild'));
     	}
     	
-    	$cache->setCaching(JFactory::getConfig()->get('caching'));
-    	
-       if($result->code != 200) {
-            return 'error in <strong>' . __CLASS__ . '</strong><br/>HTTP Code: ' . $result->code;
+      	if($result->code != 200) {
+        	return __CLASS__ . ' HTTP-Status ' . JHTML::_('link', 'http://wikipedia.org/wiki/List_of_HTTP_status_codes#'.$result->code, $result->code, array('target' => '_blank'));
         }
         
         $result->body = json_decode($result->body);
@@ -50,14 +52,18 @@ abstract class mod_world_of_logs {
         if(empty($result->body->rows) || !is_array($result->body->rows)) {
         	return 'no raids found';
         }
-   		
-    	foreach($result->body->rows as $row) {
+        
+    	foreach($result->body->rows as $key => $row) {
     		$row->limit = $row->zones[0]->playerLimit;
     		$row->mode = $row->zones[0]->difficulty;
     		$row->duration = self::duration($row->duration);
     		$row->name = isset(self::$zones[$row->zones[0]->id]) ? self::$zones[$row->zones[0]->id] : $row->zones[0]->name;
     		
-    		unset($row->zones, $row->participants, $row->bosses, $row->healingDone, $row->damageDone, $row->damageTaken, $row->date);
+    		if($key >= $params->get('raids')) {
+    			unset($result->body->rows[$key]);
+    			continue;
+    		}
+    		unset($row->zones, $row->bosses, $row->healingDone, $row->damageDone, $row->damageTaken);
     	}
     	
     	return $result->body->rows;

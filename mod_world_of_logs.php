@@ -11,10 +11,8 @@
  * @version    $Id$
  */
 
-// no direct access
 defined('_JEXEC') or die;
 
-// Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
 
 $logs = mod_world_of_logs::_($params);

@@ -7,15 +7,17 @@
  * @copyright  (c) 2011 - 2013 Branko Wilhelm
  * @package    mod_world_of_logs
  * @license    GNU General Public License v3
- * @version    $Id$
+ * @version    $Id: default.php 21 2013-04-02 20:06:31Z bRunO $
  */
 
 defined('_JEXEC') or die;
 
+JHTML::_('behavior.tooltip');
+
 $base = JURI::base(true);
-JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '/tmpl/stylesheet.css');
+JFactory::getDocument()->addStyleSheet($base . '/modules/mod_world_of_logs/tmpl/stylesheet.css', 'text/css', 'all');
 ?>
-<table class="mod_world_of_logs">
+<table class="mod_world_of_logs<?php echo $params->get('moduleclass_sfx'); ?>">
     <thead>
         <tr>
             <th><strong><?php echo JText::_('MOD_WOL_RAID'); ?></strong></th>
@@ -28,7 +30,7 @@ JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '
     <tbody>
     <?php
     foreach($logs as $log): ?>
-    <tr>
+    <tr class="hasTip" title="<?php echo JText::_('MOD_WOL_PARTICIPANTS'); ?>::<?php echo implode('&lt;br/&gt;', $log->participants); ?>">
     	<td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHTML::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?> <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
     	<td class="duration"><?php echo $log->duration; ?></td>
     	<td class="bossCount"><?php echo $log->bossCount; ?></td>
