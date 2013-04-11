@@ -2,13 +2,10 @@
 
 table.mod_world_of_logs {
     width: 100%;
-    border: 0;
-    border-collapse: separate;
 }
 
-table.mod_world_of_logs td {
-    border: 0;
-    padding: 3px;
+table.mod_world_of_logs td, table.mod_world_of_logs th {
+    padding: 2px;
 }
 
 table.mod_world_of_logs td.bossCount,
