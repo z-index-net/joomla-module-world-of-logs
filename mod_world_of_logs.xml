@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- @Version $Id$ -->
-<extension type="module" version="1.6" client="site" method="upgrade">
+<extension type="module" version="2.5" client="site" method="upgrade">
     <name>World of Logs latest Raids</name>
     <author>Branko Wilhelm</author>
     <creationDate>Sep 2011</creationDate>
@@ -23,14 +23,14 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="guild" type="text" filter="integer" default="" size="30" required="true" label="MOD_WOL_GUILD_LABEL" />
-                <field name="raids" type="integer" first="1" last="10" step="1" default="10" label="MOD_WOL_GUILD_RAIDS_LABEL" />
+                <field name="guild" type="text" filter="integer" default="" size="30" required="true" label="MOD_WORLD_OF_LOGS_GUILD_LABEL" />
+                <field name="raids" type="integer" first="1" last="10" step="1" default="10" label="MOD_WORLD_OF_LOGS_GUILD_RAIDS_LABEL" />
             </fieldset>
             <fieldset name="advanced">
                 <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
                 <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
-                <field name="timeout" type="text" filter="integer" default="10" size="5" required="true" label="MOD_WOL_TIMEOUT_LABEL" description="MOD_WOL_TIMEOUT_DESC" />
-                <field name="cache_time" type="text" filter="integer" default="60" required="true" label="MOD_WOL_CACHETIME_LABEL" description="MOD_WOL_CACHETIME_DESC"/>
+                <field name="timeout" type="text" filter="integer" default="10" size="5" required="true" label="MOD_WORLD_OF_LOGS_TIMEOUT_LABEL" description="MOD_WORLD_OF_LOGS_TIMEOUT_DESC" />
+                <field name="cache_time" type="text" filter="integer" default="60" required="true" label="MOD_WORLD_OF_LOGS_CACHETIME_LABEL" description="MOD_WORLD_OF_LOGS_CACHETIME_DESC"/>
             </fieldset>
         </fields>
     </config>

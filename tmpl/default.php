@@ -1,4 +1,5 @@
 <?php
+
 /**
  * World of Logs latest Raids Module
  *
@@ -18,8 +19,8 @@ JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '
 <table class="mod_world_of_logs">
     <thead>
         <tr>
-            <th><strong><?php echo JText::_('MOD_WOL_RAID'); ?></strong></th>
-            <th><strong><?php echo JText::_('MOD_WOL_DURATION'); ?></strong></th>
+            <th><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_RAID'); ?></strong></th>
+            <th><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_DURATION'); ?></strong></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/boss.png" width="16" height="16" alt="" title="bossCount" /></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/kills.png" width="16" height="16" alt="" title="killCount" /></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/wipes.png" width="16" height="16" alt="" title="wipeCount" /></th>

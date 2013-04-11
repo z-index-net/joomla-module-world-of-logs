@@ -1,4 +1,5 @@
 <?php
+
 /**
  * World of Logs latest Raids Module
  *
@@ -15,13 +16,13 @@ defined('_JEXEC') or die;
 JHTML::_('behavior.tooltip');
 
 $base = JURI::base(true);
-JFactory::getDocument()->addStyleSheet($base . '/modules/mod_world_of_logs/tmpl/stylesheet.css', 'text/css', 'all');
+JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '/tmpl/stylesheet.css');
 ?>
-<table class="mod_world_of_logs<?php echo $params->get('moduleclass_sfx'); ?>">
+<table class="mod_world_of_logs">
     <thead>
         <tr>
-            <th><strong><?php echo JText::_('MOD_WOL_RAID'); ?></strong></th>
-            <th><strong><?php echo JText::_('MOD_WOL_DURATION'); ?></strong></th>
+            <th><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_RAID'); ?></strong></th>
+            <th><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_DURATION'); ?></strong></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/boss.png" width="16" height="16" alt="" title="bossCount" /></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/kills.png" width="16" height="16" alt="" title="killCount" /></th>
             <th><img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/wipes.png" width="16" height="16" alt="" title="wipeCount" /></th>
@@ -30,7 +31,7 @@ JFactory::getDocument()->addStyleSheet($base . '/modules/mod_world_of_logs/tmpl/
     <tbody>
     <?php
     foreach($logs as $log): ?>
-    <tr class="hasTip" title="<?php echo JText::_('MOD_WOL_PARTICIPANTS'); ?>::<?php echo implode('&lt;br/&gt;', $log->participants); ?>">
+    <tr class="hasTip" title="<?php echo JText::_('MOD_WORLD_OF_LOGS_PARTICIPANTS'); ?>::<?php echo implode('&lt;br/&gt;', $log->participants); ?>">
     	<td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHTML::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?> <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
     	<td class="duration"><?php echo $log->duration; ?></td>
     	<td class="bossCount"><?php echo $log->bossCount; ?></td>

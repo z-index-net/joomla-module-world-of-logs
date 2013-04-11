@@ -13,15 +13,13 @@
 
 defined('_JEXEC') or die;
 
-jimport('joomla.http.http');
-
 abstract class mod_world_of_logs {
 
     private static $zones = array(4812 => 'ICC', 4987 => 'RS', 4493 => 'OS', 4273 => 'Ulduar', 4722 => 'PDK', 3456 => 'Nax', 2159 => 'Ony', 4603 => 'VA', 4500 => 'Malygos', 5600 => 'BH', 5334 => 'BoT', 5094 => 'BWD', 5638 => 'T4W', 5723 => 'FL', 5892 => 'DS', 6125 => 'Mogu', 6297 => 'HoF', 6067 => 'ToES', 6622 => 'ToT');
     
     public static function _(JRegistry &$params) {
 
-    	if (!$params->get('guild')) {
+    	if(!$params->get('guild')) {
     		return 'please configure Module - ' . __CLASS__;
     	}
     	
