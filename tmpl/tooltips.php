@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.tooltip');
 
-$base = JURI::base(true);
+$base = JUri::base(true);
 JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '/tmpl/stylesheet.css');
 ?>
 <table class="mod_world_of_logs">
