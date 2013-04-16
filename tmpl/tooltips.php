@@ -13,7 +13,7 @@
 
 defined('_JEXEC') or die;
 
-JHTML::_('behavior.tooltip');
+JHtml::_('behavior.tooltip');
 
 $base = JURI::base(true);
 JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '/tmpl/stylesheet.css');
@@ -32,7 +32,7 @@ JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '
     <?php
     foreach($logs as $log): ?>
     <tr class="hasTip" title="<?php echo JText::_('MOD_WORLD_OF_LOGS_PARTICIPANTS'); ?>::<?php echo implode('&lt;br/&gt;', $log->participants); ?>">
-    	<td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHTML::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?> <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
+    	<td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHtml::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?> <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
     	<td class="duration"><?php echo $log->duration; ?></td>
     	<td class="bossCount"><?php echo $log->bossCount; ?></td>
     	<td class="killCount"><?php echo $log->killCount; ?></td>

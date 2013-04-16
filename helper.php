@@ -27,12 +27,12 @@ abstract class mod_world_of_logs {
     	
     	$cache = JFactory::getCache(__CLASS__ , 'output');
     	$cache->setCaching(1);
-    	$cache->setLifeTime($params->get('cache_time', 60) * 60);
+    	$cache->setLifeTime($params->get('cache_time', 60));
     	if(!$result = $cache->get($params->get('guild'))) {
-    		$http = new JHttp;
-    		$http->setOption('userAgent', 'Joomla! ' . JVERSION . '; World of Logs latest Raids; php/' . phpversion());
-    		
     		try {
+    			$http = new JHttp(new JRegistry, new JHttpTransportCurl(new JRegistry));
+    			$http->setOption('userAgent', 'Joomla! ' . JVERSION . '; World of Logs latest Raids; php/' . phpversion());
+    		
 	    		$result = $http->get($url, null, $params->get('timeout', 10));
     		}catch(Exception $e) {
     			return $e->getMessage();
@@ -42,7 +42,7 @@ abstract class mod_world_of_logs {
     	}
     	
       	if($result->code != 200) {
-        	return __CLASS__ . ' HTTP-Status ' . JHTML::_('link', 'http://wikipedia.org/wiki/List_of_HTTP_status_codes#'.$result->code, $result->code, array('target' => '_blank'));
+        	return __CLASS__ . ' HTTP-Status ' . JHtml::_('link', 'http://wikipedia.org/wiki/List_of_HTTP_status_codes#'.$result->code, $result->code, array('target' => '_blank'));
         }
         
         $result->body = json_decode($result->body);
