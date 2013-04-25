@@ -8,8 +8,8 @@ table.mod_world_of_logs td, table.mod_world_of_logs th {
     padding: 2px;
 }
 
-table.mod_world_of_logs td.bossCount,
-table.mod_world_of_logs td.killCount,
-table.mod_world_of_logs td.wipeCount {
+table.mod_world_of_logs tbody td.bossCount,
+table.mod_world_of_logs tbody td.killCount,
+table.mod_world_of_logs tbody td.wipeCount {
     text-align: center;
 }
