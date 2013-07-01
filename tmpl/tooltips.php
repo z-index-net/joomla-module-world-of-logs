@@ -1,16 +1,12 @@
 <?php
 
 /**
- * World of Logs latest Raids Module
- *
- * @author     Branko Wilhelm <bw@z-index.net>
+ * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  (c) 2011 - 2013 Branko Wilhelm
- * @package    mod_world_of_logs
+ * @copyright  (c) 2013 Branko Wilhelm
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- * @version    $Id: default.php 21 2013-04-02 20:06:31Z bRunO $
  */
-
+ 
 defined('_JEXEC') or die;
 
 JHtml::_('behavior.tooltip');

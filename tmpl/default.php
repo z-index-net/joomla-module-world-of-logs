@@ -1,18 +1,13 @@
 <?php
 
 /**
- * World of Logs latest Raids Module
- *
- * @author     Branko Wilhelm <bw@z-index.net>
+ * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  (c) 2011 - 2013 Branko Wilhelm
- * @package    mod_world_of_logs
+ * @copyright  (c) 2013 Branko Wilhelm
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- * @version    $Id$
  */
-
+ 
 defined('_JEXEC') or die;
-
 $base = JUri::base(true);
 JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '/tmpl/stylesheet.css');
 ?>
