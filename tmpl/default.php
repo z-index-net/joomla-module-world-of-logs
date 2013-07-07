@@ -8,7 +8,9 @@
  */
  
 defined('_JEXEC') or die;
+
 $base = JUri::base(true);
+
 JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '/tmpl/stylesheet.css');
 ?>
 <table class="mod_world_of_logs">
