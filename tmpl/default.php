@@ -22,8 +22,7 @@ JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '
         </tr>
     </thead>
     <tbody>
-    <?php
-    foreach($logs as $log): ?>
+    <?php foreach($logs as $log): ?>
     <tr>
     	<td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHtml::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?> <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
     	<td class="duration"><?php echo $log->duration; ?></td>
