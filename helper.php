@@ -16,7 +16,7 @@ abstract class mod_world_of_logs {
     public static function _(JRegistry &$params) {
     	$url = 'http://www.worldoflogs.com/feeds/guilds/' . $params->get('guild') . '/raids/';
     	
-    	$cache = JFactory::getCache(__CLASS__ , 'output');
+    	$cache = JFactory::getCache('wow' , 'output');
     	$cache->setCaching(1);
     	$cache->setLifeTime($params->get('cache_time', 60));
     	if(!$result = $cache->get($params->get('guild'))) {
