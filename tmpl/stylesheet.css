@@ -2,7 +2,8 @@ table.mod_world_of_logs {
     width: 100%;
 }
 
-table.mod_world_of_logs td, table.mod_world_of_logs th {
+table.mod_world_of_logs td,
+table.mod_world_of_logs th {
     padding: 2px;
 }
 
