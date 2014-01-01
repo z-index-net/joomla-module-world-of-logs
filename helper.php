@@ -9,13 +9,37 @@
 
 defined('_JEXEC') or die;
 
-abstract class mod_world_of_logs
+abstract class ModWorldOfLogsHelper
 {
 
     private static $zones = array(4812 => 'ICC', 4987 => 'RS', 4493 => 'OS', 4273 => 'Ulduar', 4722 => 'PDK', 3456 => 'Nax', 2159 => 'Ony', 4603 => 'VA', 4500 => 'Malygos', 5600 => 'BH', 5334 => 'BoT', 5094 => 'BWD', 5638 => 'T4W', 5723 => 'FL', 5892 => 'DS', 6125 => 'Mogu', 6297 => 'HoF', 6067 => 'ToES', 6622 => 'ToT', 6738 => 'SoO');
 
-    public static function _(JRegistry &$params)
+    public static function getAjax()
     {
+        $module = JModuleHelper::getModule('mod_' . JFactory::getApplication()->input->get('module'));
+
+        if (empty($module)) {
+            return false;
+        }
+
+        JFactory::getLanguage()->load($module->module);
+
+        $params = new JRegistry($module->params);
+        $params->set('ajax', 0);
+
+        ob_start();
+
+        require(dirname(__FILE__) . '/' . $module->module . '.php');
+
+        return ob_get_clean();
+    }
+
+    public static function getData(JRegistry &$params)
+    {
+        if ($params->get('ajax')) {
+            return;
+        }
+
         $url = 'http://www.worldoflogs.com/feeds/guilds/' . $params->get('guild') . '/raids/';
 
         $cache = JFactory::getCache('wow', 'output');
@@ -26,7 +50,7 @@ abstract class mod_world_of_logs
 
         if (!$result = $cache->get($key)) {
             try {
-                $http = new JHttp(new JRegistry, new JHttpTransportCurl(new JRegistry));
+                $http = JHttpFactory::getHttp();
                 $http->setOption('userAgent', 'Joomla! ' . JVERSION . '; World of Logs latest Raids; php/' . phpversion());
 
                 $result = $http->get($url, null, $params->get('timeout', 10));

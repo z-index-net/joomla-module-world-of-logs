@@ -9,11 +9,11 @@
 
 defined('_JEXEC') or die;
 
-require_once dirname(__FILE__) . '/helper.php';
+JLoader::register('ModWorldOfLogsHelper', dirname(__FILE__) . '/helper.php');
 
-$logs = mod_world_of_logs::_($params);
+$logs = ModWorldOfLogsHelper::getData($params);
 
-if (!is_array($logs)) {
+if (!$params->get('ajax') && !is_array($logs)) {
     echo $logs;
     return;
 }
