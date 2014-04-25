@@ -44,7 +44,7 @@ abstract class ModWorldOfLogsHelper
 
         $cache = JFactory::getCache('wow', 'output');
         $cache->setCaching(1);
-        $cache->setLifeTime($params->get('cache_time', 60));
+        $cache->setLifeTime($params->get('cache_time', 60) * 60);
 
         $key = md5('wol_' . $params->get('guild'));
 
