@@ -23,9 +23,9 @@ JFactory::getDocument()->addStyleSheet('media/' . $module->module . '/css/defaul
         <tr>
             <th class="raid"><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_RAID'); ?></strong></th>
             <th class="duration"><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_DURATION'); ?></strong></th>
-            <th class="bossCount">&nbsp;</th>
-            <th class="killCount">&nbsp;</th>
-            <th class="wipeCount">&nbsp;</th>
+            <th class="bossCount" title="bossCount">&nbsp;</th>
+            <th class="killCount" title="killCount">&nbsp;</th>
+            <th class="wipeCount" title="wipeCount">&nbsp;</th>
         </tr>
         </thead>
         <tbody>
