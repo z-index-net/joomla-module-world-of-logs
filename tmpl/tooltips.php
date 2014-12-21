@@ -15,8 +15,6 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.tooltip');
 
-$base = JUri::base(true);
-
 JFactory::getDocument()->addStyleSheet('media/' . $module->module . '/css/default.css');
 ?>
 <?php if ($params->get('ajax')) : ?>

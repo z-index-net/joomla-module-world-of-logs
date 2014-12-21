@@ -14,7 +14,7 @@ if (!class_exists('WoWModuleAbstract')) {
     return;
 }
 
-JLoader::register('ModWorldOfLogsHelper', dirname(__FILE__) . '/helper.php');
+JLoader::register('ModWorldOfLogsHelper', __DIR__ . '/helper.php');
 
 $logs = ModWorldOfLogsHelper::getData($params);
 
