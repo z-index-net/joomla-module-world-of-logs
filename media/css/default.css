@@ -1,0 +1,30 @@
+.mod_world_of_logs {
+    width: 100%;
+}
+
+.mod_world_of_logs td,
+.mod_world_of_logs th {
+    padding: 2px;
+}
+
+.mod_world_of_logs .bossCount,
+.mod_world_of_logs .killCount,
+.mod_world_of_logs .wipeCount {
+    width: 16px;
+    text-align: right;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+}
+
+.mod_world_of_logs th.bossCount {
+    background-image: url('../images/boss.png');
+}
+
+.mod_world_of_logs th.killCount {
+    background-image: url('../images/kills.png');
+}
+
+.mod_world_of_logs th.wipeCount {
+    background-image: url('../images/wipes.png');
+}

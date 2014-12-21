@@ -3,8 +3,12 @@
 /**
  * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  (c) 2013 - 2014 Branko Wilhelm
+ * @copyright  (c) 2011 - 2015 Branko Wilhelm
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @var        array $logs
+ * @var        stdClass $module
+ * @var        Joomla\Registry\Registry $params
  */
 
 defined('_JEXEC') or die;
@@ -13,7 +17,7 @@ JHtml::_('behavior.tooltip');
 
 $base = JUri::base(true);
 
-JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '/tmpl/default.css');
+JFactory::getDocument()->addStyleSheet('media/' . $module->module . '/css/default.css');
 ?>
 <?php if ($params->get('ajax')) : ?>
     <div class="mod_world_of_logs ajax"></div>
@@ -23,20 +27,14 @@ JFactory::getDocument()->addStyleSheet($base . '/modules/' . $module->module . '
         <tr>
             <th class="raid"><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_RAID'); ?></strong></th>
             <th class="duration"><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_DURATION'); ?></strong></th>
-            <th class="bossCount">
-                <img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/boss.png" width="16" height="16" alt="" title="bossCount"/>
-            </th>
-            <th class="killCount">
-                <img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/kills.png" width="16" height="16" alt="" title="killCount"/>
-            </th>
-            <th class="wipeCount">
-                <img src="<?php echo $base; ?>/modules/mod_world_of_logs/tmpl/images/wipes.png" width="16" height="16" alt="" title="wipeCount"/>
-            </th>
+            <th class="bossCount">&nbsp;</th>
+            <th class="killCount">&nbsp;</th>
+            <th class="wipeCount">&nbsp;</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($logs as $log): ?>
-            <tr class="hasTip" title="<?php echo JText::_('MOD_WORLD_OF_LOGS_PARTICIPANTS'); ?>::<?php echo implode('&lt;br/&gt;', $log->participants); ?>">
+            <tr class="hasTip" title="&lt;strong&gt;<?php echo JText::_('MOD_WORLD_OF_LOGS_PARTICIPANTS'); ?>&lt;/strong&gt;&lt;br/&gt;<?php echo implode('&lt;br/&gt;', $log->participants); ?>">
                 <td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHtml::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?>
                     <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
                 <td class="duration"><?php echo $log->duration; ?></td>
