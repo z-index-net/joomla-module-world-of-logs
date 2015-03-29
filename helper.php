@@ -38,26 +38,32 @@ class ModWorldOfLogsHelper extends WoWModuleAbstract
 
     protected function getInternalData()
     {
-        try {
+        try
+        {
             $result = WoW::getInstance()->getAdapter('WorldOfLogs')->getData($this->params->module->get('guild'));
-        } catch (Exception $e) {
+        } catch (Exception $e)
+        {
             return $e->getMessage();
         }
 
-        foreach ($result->body->rows as $key => $row) {
+        foreach ($result->body->rows as $key => $row)
+        {
             $row->duration = $this->duration($row->duration);
 
-            if (!empty($row->zones)) {
+            if (!empty($row->zones))
+            {
                 $row->name = isset($this->zones[$row->zones[0]->id]) ? $this->zones[$row->zones[0]->id] : $row->zones[0]->name;
                 $row->limit = $row->zones[0]->playerLimit;
                 $row->mode = $row->zones[0]->difficulty;
-            } else {
+            } else
+            {
                 $row->name = 'Unknown';
                 $row->lmit = 0;
                 $row->mode = 0;
             }
 
-            if ($key >= $this->params->module->get('raids')) {
+            if ($key >= $this->params->module->get('raids'))
+            {
                 unset($result->body->rows[$key]);
                 continue;
             }
@@ -73,6 +79,7 @@ class ModWorldOfLogsHelper extends WoWModuleAbstract
         $min = (int)($msec / 1000 / 60);
         $msec = $msec - $min * 60 * 1000;
         $sec = (int)($msec / 1000);
+
         return $hour . ':' . $min;
     }
 }

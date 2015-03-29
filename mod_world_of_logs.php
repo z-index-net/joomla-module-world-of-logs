@@ -12,8 +12,10 @@
 
 defined('_JEXEC') or die;
 
-if (!class_exists('WoWModuleAbstract')) {
+if (!class_exists('WoWModuleAbstract'))
+{
     echo JText::_('JERROR_ERROR') . ': WoW-Plugin not found?!';
+
     return;
 }
 
@@ -21,8 +23,10 @@ JLoader::register('ModWorldOfLogsHelper', __DIR__ . '/helper.php');
 
 $logs = ModWorldOfLogsHelper::getData($params);
 
-if (!$params->get('ajax') && !is_array($logs)) {
+if (!$params->get('ajax') && !is_array($logs))
+{
     echo $logs;
+
     return;
 }
 

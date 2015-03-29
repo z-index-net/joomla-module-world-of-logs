@@ -7,6 +7,10 @@
     padding: 2px;
 }
 
+.mod_world_of_logs thead th {
+    font-weight: bold;
+}
+
 .mod_world_of_logs .bossCount,
 .mod_world_of_logs .killCount,
 .mod_world_of_logs .wipeCount {

@@ -13,11 +13,14 @@ class mod_world_of_logsInstallerScript
 {
     public function preflight()
     {
-        if (!class_exists('WoW')) {
+        if (!class_exists('WoW'))
+        {
             $link = JHtml::_('link', 'http://www.z-index.net', 'z-index.net', array('target' => '_blank'));
             JFactory::getApplication()->enqueueMessage(sprintf('You need the latest Joomla WoW configuration Extension from ', $link), 'error');
+
             return false;
         }
+
         return true;
     }
 }

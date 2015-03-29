@@ -21,8 +21,8 @@ JFactory::getDocument()->addStyleSheet('media/' . $module->module . '/css/defaul
     <table class="mod_world_of_logs">
         <thead>
         <tr>
-            <th class="raid"><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_RAID'); ?></strong></th>
-            <th class="duration"><strong><?php echo JText::_('MOD_WORLD_OF_LOGS_DURATION'); ?></strong></th>
+            <th class="raid"><?php echo JText::_('MOD_WORLD_OF_LOGS_RAID'); ?></th>
+            <th class="duration"><?php echo JText::_('MOD_WORLD_OF_LOGS_DURATION'); ?></th>
             <th class="bossCount" title="bossCount">&nbsp;</th>
             <th class="killCount" title="killCount">&nbsp;</th>
             <th class="wipeCount" title="wipeCount">&nbsp;</th>
@@ -31,8 +31,10 @@ JFactory::getDocument()->addStyleSheet('media/' . $module->module . '/css/defaul
         <tbody>
         <?php foreach ($logs as $log): ?>
             <tr>
-                <td class="raid"><?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHtml::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?>
-                    <span>(<?php echo $log->limit . $log->mode; ?>)</span></td>
+                <td class="raid">
+                    <?php echo JHtml::_('date', $log->dateString, 'd.m') . ' ' . JHtml::_('link', 'http://www.worldoflogs.com/reports/' . $log->id, $log->name, array('target' => '_blank')); ?>
+                    <span>(<?php echo $log->limit . $log->mode; ?>)</span>
+                </td>
                 <td class="duration"><?php echo $log->duration; ?></td>
                 <td class="bossCount"><?php echo $log->bossCount; ?></td>
                 <td class="killCount"><?php echo $log->killCount; ?></td>
