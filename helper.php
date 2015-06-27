@@ -33,7 +33,8 @@ class ModWorldOfLogsHelper extends WoWModuleAbstract
         6622 => 'ToT',
         6738 => 'SoO',
         6996 => 'HM',
-        6967 => 'BF'
+        6967 => 'BF',
+        7545 => 'HC',
     );
 
     protected function getInternalData()
