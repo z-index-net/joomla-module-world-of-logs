@@ -22,7 +22,7 @@
         <language tag="de-DE">de-DE/de-DE.mod_world_of_logs.sys.ini</language>
     </languages>
     <updateservers>
-        <server type="collection" priority="1" name="z-index development">http://www.z-index.net/en/extensions.xml</server>
+        <server type="extension" priority="1" name="W">https://raw.githubusercontent.com/z-index-net/joomla-module-world-of-logs/master/updatestream.xml</server>
     </updateservers>
     <media folder="media" destination="mod_world_of_logs">
         <folder>css</folder>
