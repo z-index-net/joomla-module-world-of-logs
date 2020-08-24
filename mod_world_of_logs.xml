@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5" client="site" method="upgrade">
+<extension type="module" version="3.0" client="site" method="upgrade">
     <name>MOD_WORLD_OF_LOGS</name>
     <author>Branko Wilhelm</author>
     <creationDate>Sep 2011</creationDate>
